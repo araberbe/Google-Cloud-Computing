@@ -2,12 +2,12 @@
 
 Este repositorio contiene una recopilación organizada de **apuntes, comandos, laboratorios y explicaciones** del curso **"Google Cloud Computing Foundations"**, ofrecido por Google Cloud en la plataforma Coursera y similares.
 
----
+
 ## 🎯 Objetivo del Curso
 
 Brindar una introducción **práctica y conceptual** a los servicios esenciales de Google Cloud, ayudando a desarrollar las habilidades necesarias para comenzar a trabajar en la nube con confianza.
 
----
+
 
 ## 🧩 Módulos del Curso
 
@@ -35,7 +35,7 @@ Creación de una red segura con reglas de firewall, subredes y configuraciones p
 ### 8. Prepare Data for ML APIs on Google Cloud
 Preparación de datos para integrarlos en modelos de machine learning utilizando APIs de GCP.
 
----
+
 
 ## 🛠️ Herramientas y Tecnologías
 
