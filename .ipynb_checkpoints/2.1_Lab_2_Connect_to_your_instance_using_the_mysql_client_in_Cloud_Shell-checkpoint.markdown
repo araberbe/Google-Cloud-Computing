@@ -1,0 +1,186 @@
+# 📌 Conectar a tu instancia usando el cliente MySQL en Cloud Shell
+
+## Introducción
+
+Este laboratorio práctico te guiará en la creación y conexión a una instancia de base de datos **MySQL** en **Google Cloud SQL** utilizando **Cloud Shell**. Aprenderás a realizar operaciones básicas con SQL, como crear una base de datos y cargar datos, todo desde la línea de comandos. Este enfoque es ideal para empresas que necesitan gestionar datos de forma eficiente, como registros contables o información de clientes, sin preocuparse por la infraestructura subyacente.
+
+💡 **Beneficio empresarial**: **Cloud SQL** permite a las empresas implementar bases de datos seguras y escalables sin administrar servidores físicos, lo que reduce costos operativos y agiliza procesos como el almacenamiento de transacciones o reportes financieros.
+
+Para más información sobre Cloud SQL, consulta la [Documentación oficial de Google Cloud SQL](https://cloud.google.com/sql/docs).
+
+## 🚀 Objetivos del laboratorio
+
+- Crear una instancia de **Cloud SQL** para MySQL.
+- Conectarte a la instancia desde **Cloud Shell** usando el cliente MySQL.
+- Crear una base de datos y cargar datos de ejemplo, simulando un sistema como un libro de visitas.
+
+💡 **Contexto empresarial**: Estos pasos son útiles para configurar bases de datos que almacenen información crítica, como registros de transacciones o datos de clientes, con alta disponibilidad y seguridad.
+
+## 📚 Requisitos y preparación
+
+### Requisitos previos
+- Un navegador web (se recomienda **Google Chrome** en modo incógnito para evitar conflictos de cuenta).
+- Credenciales temporales proporcionadas por el laboratorio (no uses una cuenta personal de Google Cloud para evitar costos).
+  
+### Consideraciones importantes
+- El laboratorio se realiza en tiempo real y no se puede pausar.
+- Usa las credenciales temporales proporcionadas (usuario y contraseña).
+- No configures opciones de recuperación ni autenticación en dos pasos.
+- No te registres en pruebas gratuitas.
+
+💡 **Contexto empresarial**: Usar credenciales temporales garantiza que las pruebas no generen costos inesperados, un aspecto clave para la gestión financiera en proyectos tecnológicos.
+
+## 🚀 Tarea 1: Acceder a la consola de Google Cloud
+
+En esta tarea, iniciarás sesión en la **Consola de Google Cloud** para comenzar a trabajar con los servicios de la nube.
+
+### Pasos
+1. Haz clic en el botón **Start Lab** en el entorno del laboratorio.
+2. Copia el usuario y la contraseña proporcionados.
+3. Accede a la **Consola de Google Cloud** haciendo clic en **Open Google Cloud console** (preferiblemente en una ventana de incógnito).
+4. Acepta los términos y condiciones sin agregar opciones de recuperación.
+
+💡 **Contexto empresarial**: Acceder a la consola de forma segura es el primer paso para gestionar recursos en la nube, como bases de datos para sistemas contables o de gestión empresarial.
+
+Para más información sobre la consola, consulta la [Documentación de Google Cloud Console](https://cloud.google.com/console).
+
+## 🚀 Tarea 2: Activar Cloud Shell
+
+**Cloud Shell** es una terminal en línea que permite ejecutar comandos directamente en el entorno de Google Cloud, ideal para gestionar recursos sin necesidad de instalar herramientas localmente.
+
+### Pasos
+1. Haz clic en el icono de **Cloud Shell** en la parte superior de la consola.
+2. Autoriza el uso de las credenciales proporcionadas.
+3. Espera a que aparezca el mensaje de confirmación del proyecto activo.
+
+### Comandos útiles
+
+Verifica la cuenta activa:
+
+```bash
+gcloud auth list
+```
+
+**Explicación del comando**:  
+- `gcloud auth list`: Muestra las cuentas autenticadas en **Cloud Shell**, asegurando que estás usando las credenciales correctas.  
+💡 **Contexto empresarial**: Confirmar la cuenta activa es crucial para evitar accesos no autorizados, especialmente en entornos empresariales con datos sensibles.
+
+Verifica el ID del proyecto:
+
+```bash
+gcloud config list project
+```
+
+**Explicación del comando**:  
+- `gcloud config list project`: Muestra el ID del proyecto activo, necesario para asociar recursos como bases de datos.  
+💡 **Contexto empresarial**: Mantener un control claro de los proyectos ayuda a asignar costos y recursos correctamente en la contabilidad de TI.
+
+Para más información sobre Cloud Shell, consulta la [Documentación de Google Cloud Shell](https://cloud.google.com/shell/docs).
+
+## 🚀 Tarea 3: Crear una instancia de Cloud SQL
+
+En esta tarea, crearás una instancia de **Cloud SQL** para MySQL, que será la base para almacenar datos.
+
+### Pasos
+1. Desde el menú de navegación de la consola, selecciona **SQL** y haz clic en **Create Instance**.
+2. Selecciona el motor de base de datos **MySQL**.
+3. Elige la edición **Enterprise** y el preset **Development** (4 vCPU, 16 GB RAM, 100 GB de almacenamiento).
+4. Configura lo siguiente:
+   - **Versión**: MySQL 8.
+   - **Nombre de la instancia**: `myinstance`.
+   - **Región y zona**: Usa las indicadas en el laboratorio.
+   - **Contraseña de root**: Genera y guarda una contraseña segura.
+5. Haz clic en **Create Instance**.
+6. Espera a que aparezca una marca de verificación verde, indicando que la instancia está lista.
+
+💡 **Contexto empresarial**: Una instancia de **Cloud SQL** permite almacenar datos críticos, como registros contables o de inventario, con alta disponibilidad y copias de seguridad automáticas, reduciendo riesgos operativos.
+
+Para más información sobre la creación de instancias, consulta la [Documentación de Google Cloud SQL](https://cloud.google.com/sql/docs/mysql/create-instance).
+
+## 🚀 Tarea 4: Conectarse a la instancia usando el cliente MySQL en Cloud Shell
+
+Conectarás la instancia de **Cloud SQL** desde **Cloud Shell** utilizando el cliente **MySQL**.
+
+### Pasos
+1. Abre **Cloud Shell** si no está activo.
+2. Ejecuta el siguiente comando para conectarte a la instancia:
+
+```bash
+gcloud sql connect myinstance --user=root
+```
+
+**Explicación del comando**:  
+- `gcloud`: Herramienta de línea de comandos de Google Cloud.  
+- `sql connect`: Inicia una conexión a una instancia de **Cloud SQL**.  
+- `myinstance`: Nombre de la instancia creada.  
+- `--user=root`: Especifica el usuario administrador (root) para la conexión.  
+3. Autoriza el comando si se solicita.  
+4. Ingresa la contraseña de root cuando se te pida.
+
+💡 **Contexto empresarial**: Conectar a una base de datos desde la línea de comandos permite a los equipos de TI realizar tareas rápidas, como consultar transacciones o generar reportes financieros, sin necesidad de interfaces gráficas complejas.
+
+Para más información sobre conexiones a Cloud SQL, consulta la [Documentación de Google Cloud SQL](https://cloud.google.com/sql/docs/mysql/connect-admin-ip).
+
+## 🚀 Tarea 5: Crear una base de datos y cargar datos
+
+En esta tarea, crearás una base de datos llamada `guestbook` y cargarás datos de ejemplo, simulando un sistema de libro de visitas.
+
+### Pasos
+1. Crea la base de datos `guestbook`:
+
+```sql
+CREATE DATABASE guestbook;
+```
+
+**Explicación del comando**:  
+- `CREATE DATABASE guestbook`: Crea una nueva base de datos llamada `guestbook` en la instancia de **Cloud SQL**.  
+💡 **Contexto empresarial**: Crear bases de datos específicas permite organizar información, como registros de clientes o transacciones, para facilitar su gestión y análisis.
+
+2. Selecciona la base de datos y crea una tabla llamada `entries`:
+
+```sql
+USE guestbook;
+CREATE TABLE entries 
+(guestName VARCHAR(255), 
+content VARCHAR(255),
+entryID INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(entryID));
+```
+
+**Explicación del código**:  
+- `USE guestbook`: Selecciona la base de datos `guestbook` para realizar operaciones.  
+- `CREATE TABLE entries`: Crea una tabla llamada `entries` con las columnas:  
+  - `guestName`: Almacena el nombre del invitado (hasta 255 caracteres).  
+  - `content`: Almacena un mensaje (hasta 255 caracteres).  
+  - `entryID`: Identificador único que se incrementa automáticamente.  
+  - `PRIMARY KEY(entryID)`: Define `entryID` como la clave primaria para identificar registros de forma única.  
+💡 **Contexto empresarial**: Esta estructura es útil para registrar interacciones, como comentarios de clientes o auditorías de procesos, en sistemas empresariales.
+
+3. Inserta datos de ejemplo en la tabla `entries`:
+
+```sql
+INSERT INTO entries (guestName, content) VALUES ("first guest", "I got here!");
+INSERT INTO entries (guestName, content) VALUES ("second guest", "Me too!");
+```
+
+**Explicación del código**:  
+- `INSERT INTO entries`: Añade nuevos registros a la tabla `entries`.  
+- `VALUES`: Especifica los valores para `guestName` y `content`.  
+💡 **Contexto empresarial**: Insertar datos de ejemplo simula la carga de información real, como registros de transacciones o interacciones con clientes, que pueden usarse para pruebas o auditorías.
+
+4. Consulta los datos insertados:
+
+```sql
+SELECT * FROM entries;
+```
+
+**Explicación del comando**:  
+- `SELECT * FROM entries`: Recupera todos los registros de la tabla `entries`, mostrando los datos insertados (`guestName`, `content`, `entryID`).  
+💡 **Contexto empresarial**: Consultar datos es esencial para generar reportes, como resúmenes de transacciones o análisis de interacciones con clientes.
+
+Para más información sobre comandos SQL en Cloud SQL, consulta la [Documentación de Google Cloud SQL](https://cloud.google.com/sql/docs/mysql/quickstart).
+
+## 🚀 Conclusión
+
+Este laboratorio te ha permitido configurar una instancia de **Cloud SQL** para **MySQL**, conectarte a ella desde **Cloud Shell**, y realizar operaciones básicas como crear una base de datos y cargar datos. Estas habilidades son fundamentales para gestionar bases de datos en la nube, que son esenciales en entornos empresariales para almacenar y analizar información crítica, como registros contables, datos de clientes o auditorías.
+
+💡 **Beneficio empresarial**: Usar **Cloud SQL** permite a las empresas mantener bases de datos seguras, escalables y de fácil acceso, reduciendo costos de infraestructura y mejorando la eficiencia en procesos como la gestión financiera o el análisis de datos.
