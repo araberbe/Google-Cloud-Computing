@@ -1,27 +1,52 @@
-🎯 Objetivo del Curso
-Brindar una introducción práctica y conceptual a los servicios esenciales de Google Cloud, ayudando a desarrollar las habilidades necesarias para comenzar a trabajar en la nube con confianza.
+# ☁️ Google Cloud Computing – Curso Foundations
 
-🧩 Módulos del Curso
-Cloud Computing Fundamentals
+Este repositorio contiene una recopilación organizada de **apuntes, comandos, laboratorios y explicaciones** del curso **"Google Cloud Computing Foundations"**, ofrecido por Google Cloud en la plataforma Coursera y similares.
+
+---
+## 🎯 Objetivo del Curso
+
+Brindar una introducción **práctica y conceptual** a los servicios esenciales de Google Cloud, ayudando a desarrollar las habilidades necesarias para comenzar a trabajar en la nube con confianza.
+
+---
+
+## 🧩 Módulos del Curso
+
+### 1. Cloud Computing Fundamentals
 Introducción a la computación en la nube, sus ventajas, tipos de servicio (IaaS, PaaS, SaaS) y modelos de implementación (pública, privada, híbrida).
 
-Infrastructure in Google Cloud
-Presenta la arquitectura básica de Google Cloud, proyectos, regiones, zonas, y cómo funcionan los recursos como VM, redes y almacenamiento.
+### 2. Infrastructure in Google Cloud
+Arquitectura básica de Google Cloud: proyectos, regiones, zonas, y recursos como máquinas virtuales (VM), redes y almacenamiento.
 
-Networking and Security in Google Cloud
-Cobertura de aspectos esenciales de redes, firewalls, gestión de identidades (IAM) y buenas prácticas de seguridad en la nube.
+### 3. Networking and Security in Google Cloud
+Aspectos esenciales de redes, firewalls, gestión de identidades (IAM) y buenas prácticas de seguridad en la nube.
 
-Data, ML, and AI in Google Cloud
-Explica cómo Google Cloud gestiona datos y ofrece herramientas para análisis, aprendizaje automático e inteligencia artificial.
+### 4. Data, ML, and AI in Google Cloud
+Uso de herramientas de Google Cloud para análisis de datos, machine learning e inteligencia artificial.
 
-Implement Load Balancing on Compute Engine
-Guía práctica para configurar balanceadores de carga que distribuyen el tráfico entre múltiples instancias.
+### 5. Implement Load Balancing on Compute Engine
+Configuración práctica de balanceadores de carga para distribuir tráfico entre múltiples instancias.
 
-Set Up an App on Google Compute Engine
-Laboratorio para desplegar una aplicación web simple en una VM y comprender los pasos básicos del entorno GCE.
+### 6. Set Up an App on Google Compute Engine
+Despliegue de una aplicación web sencilla en una VM para entender el flujo básico en GCE.
 
-Build a Secure Google Cloud Network
-Crea una red personalizada con reglas de firewall, subredes y otras configuraciones seguras.
+### 7. Build a Secure Google Cloud Network
+Creación de una red segura con reglas de firewall, subredes y configuraciones personalizadas.
 
-Prepare Data for ML APIs on Google Cloud
-Describe cómo preparar datos de manera eficaz para su uso en modelos de machine learning de Google Cloud.
+### 8. Prepare Data for ML APIs on Google Cloud
+Preparación de datos para integrarlos en modelos de machine learning utilizando APIs de GCP.
+
+---
+
+## 🛠️ Herramientas y Tecnologías
+
+- Google Cloud Platform (GCP)
+- Compute Engine (GCE)
+- Cloud Storage
+- Cloud Load Balancing
+- IAM & Networking
+- AI & ML APIs
+- Jupyter Notebooks
+- Terminal (CLI) + Git
+
+
+
